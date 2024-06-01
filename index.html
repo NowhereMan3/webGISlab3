@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>   
     <title>Web GIS</title>
 </head>
 <body>
@@ -23,34 +24,14 @@
         <h1>Web GIS</h1>
     </div>
 
-    <!-- Container -->
-    <div class="container">
-        <!-- OpenLayers map will be included here -->
-		        <div id="map"></div>
-    </div>
 	
 	<!-- Footer -->
     <footer>
         &copy; John Smith, Tartu University, 2022
     </footer>
-	
-	<!-- Include OpenLayers script (optional, if OpenLayers functionality is needed) -->
-    <script src="https://openlayers.org/en/v6.5.0/build/ol.js"></script>
-    <script>
-        // OpenLayers initialization script (optional, example setup)
-        var map = new ol.Map({
-            target: 'map',
-            layers: [
-                new ol.layer.Tile({
-                    source: new ol.source.OSM()
-                })
-            ],
-            view: new ol.View({
-                center: ol.proj.fromLonLat([0, 0]),
-                zoom: 2
-            })
-        });
-    </script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> 
+ <script src="js/javascript.js"></script> 	
+
 	
 </body>
 </html>
