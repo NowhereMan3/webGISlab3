@@ -21,11 +21,13 @@ async function addDistrictsGeoJson(url) {
 }
 addDistrictsGeoJson('geojson/tartu_city_districts_edu.geojson')
 
-// add geoJSON points layer*
+// add geoJSON layer
 async function addCelltowersGeoJson(url) {
  const response = await fetch(url)
  const data = await response.json()
- const markers = L.geoJson(data)
- markers.addTo(map)
+ const markers = L.geoJson(data) 
+ const clusters = L.markerClusterGroup() 
+ clusters.addLayer(markers) 
+ clusters.addTo(map) 
 }
 addCelltowersGeoJson('geojson/tartu_city_celltowers_edu.geojson')
