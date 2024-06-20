@@ -6,16 +6,12 @@ L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 });
 osm.addTo(map)
 
-// add popup to each feature
-function popUPinfo(feature, layer) {
- layer.bindPopup(feature.properties.NIMI)
-}
-// add geoJSON polygons layer
 async function addDistrictsGeoJson(url) {
  const response = await fetch(url)
  const data = await response.json()
  const polygons = L.geoJson(data, {
  onEachFeature: popUPinfo,
+ style: polygonStyle,
  })
  polygons.addTo(map)
 }
